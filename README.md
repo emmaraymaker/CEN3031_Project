@@ -9,12 +9,5 @@ Project Description:
   Users will be able to specify specific criteria within their lists/searches, such as: dates, price, number of roommates, whether pets or couples are allowed, 
   if they are only seeking female/male roomates, etc. 
 
-Team Members:
-    Back-end: 
-      Tanner Lane
-      Corbin Burditt
-      
-    Front-end: 
-      Emma Raymaker
-      Rosalinda Ramirez
+Team Members: Tanner Lane (Back-end), Corbin Burditt (back-end), Emma Raymaker (front-end), Rosalinda Ramirez (front-end)
       
