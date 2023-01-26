@@ -4,6 +4,7 @@ Project Name:
   Actors Housing
 
 Project Description:
+  
   Website where actors in NYC can find and list housing. Actors will register using their Actors Equity Union number to verify they are a professional in the field of live theatrical performance, 
   as well as a valid email address. An actor can either update their profile, create a housing listing or search for a listing that matches their needs and timelines.
   Users will be able to specify specific criteria within their lists/searches, such as: dates, price, number of roommates, whether pets or couples are allowed, 
