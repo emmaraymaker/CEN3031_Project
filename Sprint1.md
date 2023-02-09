@@ -27,12 +27,21 @@ Which ones were successfully completed:
   
     Both user stories were about halfway completed for the frontend. Registration and login pages were created with forms to fill out and submit user data.
 
+  Backend:
+    Both user stories had skeleton versions completed.
+
+
 
 Which ones didn't and why?:
 
   Frontend:
   
     Both user stories were about halfway completed for the frontend because the accounts are not actually created or saved and the user cannot view their profile.
+
+  Backend:
+
+    Both user stories had skeleton versions completed. Set-up was difficult and one of our members had a minor family emergency queries were not able to be finished because of this
+
     
 
 Dev Team Videos:
