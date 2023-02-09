@@ -30,7 +30,6 @@ Which ones didn't and why?:
 
 Dev Team Videos:
 
-Links to Demo:
-Frontend: https://youtu.be/s4_nAxVOFL4
+  Frontend: https://youtu.be/s4_nAxVOFL4
 
 
