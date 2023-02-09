@@ -12,6 +12,13 @@ What issues your team planned to address:
 Frontend:
 
   We planned on tackling the issue of creating a login page and a registration page, so that professional actors looking for a roommate, looking to sublet, or looking to lease a unit could use their credinals to log into the Actors Housing website.
+  
+Backend:
+  1. Data structure to store members
+  2. Data structure to store listings
+  3. Query Function for members
+  4. Query Function for listings
+
 
 
 Which ones were successfully completed:
