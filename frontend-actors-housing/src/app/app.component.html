@@ -1,14 +1,22 @@
-<mat-toolbar color="warn">
-    <span style="font-size:20pt">Actors Housing</span>
-  </mat-toolbar>
-<router-outlet></router-outlet>
-
-<a>
-    <button mat-flat-button color ="accent" routerLink="/">Home</button>
+<nav>
+  <a class="button"
+  routerLink="/"
+  routerLinkActive="activebutton"
+  ariaCurrentWhenActive="page">
+ Home
 </a> |
-  <a>
-    <button mat-flat-button color ="accent" routerLink="/login">Login</button>
-  </a>
-  <a> |
-    <button mat-flat-button color ="accent" routerLink="/registration">Register</button>
-  </a>
+  <a class="button"
+     routerLink="/login"
+     routerLinkActive="activebutton"
+     ariaCurrentWhenActive="page">
+    Login Page
+  </a> |
+  <a class="button"
+  routerLink="/registration"
+  routerLinkActive="activebutton"
+  ariaCurrentWhenActive="page">
+ Registration Page
+</a> 
+</nav>
+
+<router-outlet></router-outlet>

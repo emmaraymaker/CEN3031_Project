@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "frontend-actors-housing": {
+    "actors-housing-project": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/frontend-actors-housing",
+            "outputPath": "dist/actors-housing-project",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "frontend-actors-housing:build:production"
+              "browserTarget": "actors-housing-project:build:production"
             },
             "development": {
-              "browserTarget": "frontend-actors-housing:build:development"
+              "browserTarget": "actors-housing-project:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "frontend-actors-housing:build"
+            "browserTarget": "actors-housing-project:build"
           }
         },
         "test": {
