@@ -1,6 +1,9 @@
-package Backend
+package main
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+)
 
 type Member struct {
 	// Union ID
@@ -60,7 +63,7 @@ type Listing struct {
 	// Extra filters, gender/sex, smoker, etc...
 }
 
-func (re MemberList) addMember(u string, n string, p string, e string, ps string, l bool, t bool) {
+func (re *MemberList) addMember(u string, n string, p string, e string, ps string, l bool, t bool) {
 	nm := Member{
 		UID:      u,
 		name:     n,
@@ -74,10 +77,11 @@ func (re MemberList) addMember(u string, n string, p string, e string, ps string
 	// Add duplicate check
 
 	re.ml = append(re.ml, nm)
+	fmt.Println(len(re.ml))
 }
 
 func (re MemberList) searchMember(uid string) (Member, error) {
-	for i := 0; i <= len(re.ml); i++ {
+	for i := 0; i < len(re.ml); i++ {
 		if re.ml[i].UID == uid {
 			return re.ml[i], nil
 		}
@@ -85,7 +89,7 @@ func (re MemberList) searchMember(uid string) (Member, error) {
 	return Member{}, errors.New("member not found")
 }
 
-func (re MemberList) removeMember(uid string) {
+func (re *MemberList) removeMember(uid string) {
 	for i := 0; i <= len(re.ml); i++ {
 		if re.ml[i].UID == uid {
 			re.ml = append(re.ml[:i], re.ml[i+1:]...)
@@ -96,7 +100,7 @@ func (re MemberList) removeMember(uid string) {
 
 // Login?
 
-func (re ListingSet) addListing(id int, l string, p int, g []byte, sF bool, pF bool) {
+func (re *ListingSet) addListing(id int, l string, p int, g []byte, sF bool, pF bool) {
 	nl := Listing{
 		lid:            id,
 		location:       l,
@@ -117,7 +121,7 @@ func (re ListingSet) searchListing(lid int) (Listing, error) {
 	return Listing{}, errors.New("Listing not found")
 }
 
-func (re ListingSet) removeListing(lid int) {
+func (re *ListingSet) removeListing(lid int) {
 	for i := 0; i <= len(re.ls); i++ {
 		if re.ls[i].lid == lid {
 			re.ls = append(re.ls[:i], re.ls[i+1:]...)
@@ -127,9 +131,25 @@ func (re ListingSet) removeListing(lid int) {
 }
 
 func main() {
-	// Test set for pre-front-end integration
+  // Test set for pre-front-end integration
 
 	/*
+	var memL MemberList
+
+	memL.addMember("1", "Test, t", "888-888-8888", "test@test.com", "password", false, false)
+	memL.addMember("2", "Test2, t", "888-888-8888", "test@test.com", "password", false, false)
+	memL.addMember("3", "Test3, t", "888-888-8888", "test@test.com", "password", false, false)
+
+	var name, _ = memL.searchMember("2")
+	fmt.Println(name)
+
+	memL.removeMember("2")
+
+	for i := 0; i < 2; i++ {
+		fmt.Println(memL.ml[i].name)
+	}
+
+	
 		var memL MemberList
 		var lisL ListingSet
 
