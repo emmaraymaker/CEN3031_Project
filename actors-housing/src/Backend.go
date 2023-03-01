@@ -1,10 +1,19 @@
 package Backend
 
+import "errors"
+
 type Member struct {
-	UID      string
-	name     string
-	phone    string
-	email    string
+	// Union ID
+	UID string
+	// Name - First, Last
+	name string
+	// Phone - ###-###-####
+	phone string
+	// address@site
+	email string
+	// currently no minimum requirements
+	password string
+
 	isLister bool
 	isTenant bool
 }
@@ -19,6 +28,9 @@ type ListingSet struct {
 
 type Listing struct {
 	// Info
+
+	// ID of
+	lid int
 
 	// Format: (Country) State, City, Street, Unit
 	// Notes: Comma delimited, currently only USA
@@ -48,24 +60,70 @@ type Listing struct {
 	// Extra filters, gender/sex, smoker, etc...
 }
 
-func (re MemberList) addMember(u string, n string, p string, e string, l bool, t bool) {
+func (re MemberList) addMember(u string, n string, p string, e string, ps string, l bool, t bool) {
 	nm := Member{
 		UID:      u,
 		name:     n,
 		phone:    p,
 		email:    e,
+		password: ps,
 		isLister: l,
 		isTenant: t,
 	}
+
+	// Add duplicate check
+
 	re.ml = append(re.ml, nm)
 }
 
-func (re ListingSet) addListing(l string, p int) {
+func (re MemberList) searchMember(uid string) (Member, error) {
+	for i := 0; i <= len(re.ml); i++ {
+		if re.ml[i].UID == uid {
+			return re.ml[i], nil
+		}
+	}
+	return Member{}, errors.New("member not found")
+}
+
+func (re MemberList) removeMember(uid string) {
+	for i := 0; i <= len(re.ml); i++ {
+		if re.ml[i].UID == uid {
+			re.ml = append(re.ml[:i], re.ml[i+1:]...)
+			return
+		}
+	}
+}
+
+// Login?
+
+func (re ListingSet) addListing(id int, l string, p int, g []byte, sF bool, pF bool) {
 	nl := Listing{
-		location: l,
-		price:    p,
+		lid:            id,
+		location:       l,
+		price:          p,
+		gender:         g,
+		smokerFriendly: sF,
+		petFriendly:    pF,
 	}
 	re.ls = append(re.ls, nl)
+}
+
+func (re ListingSet) searchListing(lid int) (Listing, error) {
+	for i := 0; i <= len(re.ls); i++ {
+		if re.ls[i].lid == lid {
+			return re.ls[i], nil
+		}
+	}
+	return Listing{}, errors.New("Listing not found")
+}
+
+func (re ListingSet) removeListing(lid int) {
+	for i := 0; i <= len(re.ls); i++ {
+		if re.ls[i].lid == lid {
+			re.ls = append(re.ls[:i], re.ls[i+1:]...)
+			return
+		}
+	}
 }
 
 func main() {
