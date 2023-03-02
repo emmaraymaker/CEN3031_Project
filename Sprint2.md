@@ -14,9 +14,10 @@ Documentation for the backend API
 MemberList
 
   Functions:
+  
     searchMember(UID) (member, error)
     Searches through the list of members and returns the first one with the proper user id.
-
+    
     addMember(UID, Name, Phone, Email, Lister status, Tenant status)
     Adds a member to the list.
     Currently the implementation does not have proper checks on the input, later iterations should check the arguments for validity.
@@ -30,6 +31,7 @@ MemberList
 ListingSet
 
   Functions:
+  
     searchListing(LID) (member, error)
     Searches through the set of listings and returns the first one with the proper listing id.
 
