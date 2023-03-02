@@ -8,6 +8,7 @@ List unit tests and Cypress test for frontend
 
 List unit tests for backend
 
+Currently in the works, one general test is the current progress made
 
 Documentation for the backend API 
 
