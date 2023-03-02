@@ -5,6 +5,7 @@ For sprint 2 we were able to make progress on the uncompleted issues from sprint
 
 List unit tests and Cypress test for frontend
 
+We plan to create unit tests to tests that our registration forms are being correctly submitted
 
 List unit tests for backend
 
