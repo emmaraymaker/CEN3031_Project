@@ -9,35 +9,35 @@ List unit tests and Cypress test for frontend
 List unit tests for backend
 
 
-Add documentation for your backend API 
+Documentation for the backend API 
 
 MemberList
 
-Functions:
-searchMember(UID) (member, error)
-Searches through the list of members and returns the first one with the proper user id.
+  Functions:
+    searchMember(UID) (member, error)
+    Searches through the list of members and returns the first one with the proper user id.
 
-addMember(UID, Name, Phone, Email, Lister status, Tenant status)
-Adds a member to the list.
-Currently the implementation does not have proper checks on the input, later iterations should check the arguments for validity.
+    addMember(UID, Name, Phone, Email, Lister status, Tenant status)
+    Adds a member to the list.
+    Currently the implementation does not have proper checks on the input, later iterations should check the arguments for validity.
 
-removeMember(UID)
-Removes a member from the list, returns nothing.
+    removeMember(UID)
+    Removes a member from the list, returns nothing.
 
-Later implementations might return whether the member was successfully removed or not.
+    Later implementations might return whether the member was successfully removed or not.
 
 
 ListingSet
 
-Functions:
-searchListing(LID) (member, error)
-Searches through the set of listings and returns the first one with the proper listing id.
+  Functions:
+    searchListing(LID) (member, error)
+    Searches through the set of listings and returns the first one with the proper listing id.
 
-addListing(LID, location, Price, genderPreference, smokerFriendly, petFriendly)
-Adds a Listing to the set.
-Currently the implementation does not have proper checks on the input, later iterations should check the arguments for validity.
+    addListing(LID, location, Price, genderPreference, smokerFriendly, petFriendly)
+    Adds a Listing to the set.
+    Currently the implementation does not have proper checks on the input, later iterations should check the arguments for validity.
 
-removeListing(LID)
-Removes a List from the set, returns nothing.
+    removeListing(LID)
+    Removes a List from the set, returns nothing.
 
-Later implementations might return whether the Listing was successfully removed or not.
+    Later implementations might return whether the Listing was successfully removed or not.
