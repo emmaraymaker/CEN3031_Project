@@ -5,6 +5,10 @@ For sprint 2 we were able to make progress on the uncompleted issues from sprint
 
 List unit tests and Cypress test for frontend
 
+We have implemented two tests using Cypress. One checks if the homepage mounts to the testing environments. The other tests if  the homepage is named 'Actors Housing'.
+
+We plan to implement tests in Cypress to check for button clicks and form inputs.
+
 We plan to create unit tests to tests that our registration forms are being correctly submitted
 
 List unit tests for backend
@@ -49,4 +53,3 @@ ListingSet
     
     Video Links:
     FrontEnd Progress and Cypress Tests: https://youtu.be/yptx6dEopyw
-    BackEnd: https://youtu.be/SKrQcLjdcsA
