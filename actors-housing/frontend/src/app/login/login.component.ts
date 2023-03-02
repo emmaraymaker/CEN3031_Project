@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { User } from '../user';
 
 @Component({
   selector: 'app-login',
@@ -6,6 +7,12 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-username : string ="";
-password : string ="";
+email : string = '';
+password : string = '';
+
+onSubmit(): void{
+  // need to make api call to backend to verify login credentials
+  this.email = this.email;
+}
+
 }

@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Actors Housing';
+
+
+  ngOnInit(){
+    setTimeout(
+      () => {
+        this.title = "Hey, its been updated"
+        console.log('helo?')
+      },
+      2000
+    )
+  }
 }
