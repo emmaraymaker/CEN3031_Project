@@ -8,16 +8,6 @@ describe('LoginComponent mounts', () => {
   })
 })
 
-it('First name should start off as blank', () => {
-  cy.mount(LoginComponent)
-  cy.get('[formControlName="email"]').should('have.text', '')
-})
-
-it('Last name should start off as blank', () => {
-  cy.mount(LoginComponent)
-  cy.get('[formControlName="password"]').should('have.text', '')
-})
-
 it('Email should start off as blank', () => {
   cy.mount(LoginComponent)
   cy.get('[formControlName="email"]').should('have.text', '')
