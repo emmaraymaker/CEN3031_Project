@@ -18,7 +18,6 @@ List frontend unit tests:
 -Check if Registration page's first name, last name, id, email, password, and confirm password forms are initially blank
 
 
-List backend unit tests
 
 List backend unit tests:
 
