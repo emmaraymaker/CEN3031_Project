@@ -51,3 +51,7 @@ Listings:
   GetListing, takes in one parameter, the listing ID and returns the Listing that has the ID
 
   UpdateListing, takes in multiple parameters, listing id and, Listing ID specifying which listing to change and listing, containing the old listing with the new modifications 
+  
+  Video Link:
+  
+  https://www.youtube.com/watch?v=FwmtvcjPimc
