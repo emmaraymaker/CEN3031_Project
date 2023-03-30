@@ -21,3 +21,22 @@ List backend unit tests
 
 
 Show updated documentation for your backend API 
+The Backend API has been updated to be more in-line with its function.
+
+The Functions are as follows:
+
+Users:
+
+  RegisterUser, takes in one parameter, User and appends it to the list of members
+
+  GetUser, takes in one parameter, UID and returns the User who has the ID
+
+  UpdateUser, takes in multiple parameters, UID, and User, UID specifying which user to change and User, containing the old user with the new modifications 
+
+Listings:
+
+  SetListing, takes in one parameter, Listing and appends it to the list of Listings
+
+  GetListing, takes in one parameter, the listing ID and returns the Listing that has the ID
+
+  UpdateListing, takes in multiple parameters, listing id and, Listing ID specifying which listing to change and listing, containing the old listing with the new modifications 
