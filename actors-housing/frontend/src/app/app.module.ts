@@ -13,6 +13,8 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { ListingsComponent } from './listings/listings.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegistrationComponent,
     UserComponent,
+    HomeComponent,
+    ListingsComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -33,7 +37,9 @@ import { HttpClientModule } from '@angular/common/http';
       {path: 'app', component: AppComponent},
       {path: 'login', component: LoginComponent},
       {path: 'registration', component: RegistrationComponent},
-      {path: 'user', component: UserComponent}
+      {path: 'user', component: UserComponent},
+      {path: 'home', component: HomeComponent},
+      {path: 'listings', component: ListingsComponent}
     ]),
   ],
   providers: [],

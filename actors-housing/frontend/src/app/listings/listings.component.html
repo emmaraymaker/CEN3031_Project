@@ -1,0 +1,27 @@
+<h2>Listings</h2>
+<p>Add a Listing Here!</p>
+
+<input [(ngModel)]="state" class="form-control" type="text" placeholder="State" required> |
+<input [(ngModel)]="city" class="form-control" type="text" placeholder="City" required> |
+<input [(ngModel)]="street" class="form-control" type="text" placeholder="Street" required> |
+<input [(ngModel)]="unit" class="form-control" type="text" placeholder="Unit" required> |
+<input [(ngModel)]="zipcode" class="form-control" type="number" placeholder="Zip-Code" required> |
+<input [(ngModel)]="description" class="form-control" type="text" placeholder="Description" required> |
+<button (click)="addListing()">Add Listing</button>
+
+<br>
+<br>
+
+<p>My Current Listings</p>
+<div *ngFor="let userListings of Listings">
+    {{ userListings.state }}  
+    {{ userListings.city }} 
+    {{ userListings.street }} 
+    {{ userListings.unit }} 
+    {{ userListings.zipcode }} 
+    <p>{{ userListings.description }}</p>
+    <br>
+  </div>
+
+
+
