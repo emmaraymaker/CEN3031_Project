@@ -1,26 +1,79 @@
 <h2>Register</h2>
 
 <div>
-    <p>
-        <input type="text" [(ngModel)]="user.first_name" formControlName="first_name" class="form-control" placeholder="First Name" required>
-    </p>
-    <p>
-        <input type="text" [(ngModel)]="user.last_name" formControlName="last_name" class="form-control" placeholder="Last Name" required>
-    </p>
-    <p>
-        <input [(ngModel)]="user.email" formControlName="email" type="email" class="form-control" placeholder="Email" required>
-    </p>
-    <p>
-        <input [(ngModel)]="user.id" formControlName="number" type="number" class="form-control" placeholder="Union Number" required>
-    </p>
-  <p>
-    <input [(ngModel)]="user.password" formControlName="password" type="password" class="form-control" placeholder="Password" required>
-  </p>
-    <p>
-    <input formControlName="password_confirm" type="password" class="form-control" placeholder="Password Confirm"
-           required>
-    </p>
+  <form [formGroup]="requiredForm" novalidate>
+    <div class="form-group">
+      <label class="center-block">First name:
+        <input class="form-control" formControlName="first_name" placeholder="First Name">
+      </label>
+    </div>
+    <div *ngIf="requiredForm.controls['first_name'].invalid && (requiredForm.controls['first_name'].dirty || requiredForm.controls['first_name'].touched)" class="alert alert-danger">
+      <div *ngIf="requiredForm.controls['first_name'].errors?.['required']">
+        First name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="center-block">Last name:
+        <input class="form-control" formControlName="last_name" placeholder="Last Name">
+      </label>
+    </div>
+    <div *ngIf="requiredForm.controls['last_name'].invalid && (requiredForm.controls['last_name'].dirty || requiredForm.controls['last_name'].touched)" class="alert alert-danger">
+      <div *ngIf="requiredForm.controls['last_name'].errors?.['required']">
+        Last name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="center-block">User Email:
+        <input class="form-control" formControlName="email" placeholder="User Email">
+      </label>
+    </div>
+    <div *ngIf="requiredForm.controls['email'].invalid && (requiredForm.controls['email'].dirty || requiredForm.controls['email'].touched)" class="alert alert-danger">
+      <div *ngIf="requiredForm.controls['email'].errors?.['required']">
+        User email is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="center-block">Union ID:
+        <input class="form-control" formControlName="unionid" placeholder="Union ID">
+      </label>
+    </div>
+    <div *ngIf="requiredForm.controls['unionid'].invalid && (requiredForm.controls['unionid'].dirty || requiredForm.controls['unionid'].touched)" class="alert alert-danger">
+      <div *ngIf="requiredForm.controls['unionid'].errors?.['required']">
+        Union ID is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="center-block">Password:
+        <input class="form-control" formControlName="password" placeholder="Password">
+      </label>
+    </div>
+    <div *ngIf="requiredForm.controls['password'].invalid && (requiredForm.controls['password'].dirty || requiredForm.controls['password'].touched)" class="alert alert-danger">
+      <div *ngIf="requiredForm.controls['password'].errors?.['required']">
+        Password is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="center-block">Confirm Password:
+        <input class="form-control" formControlName="confirmpassword" placeholder="Confirm Password">
+      </label>
+    </div>
+    <div *ngIf="requiredForm.controls['confirmpassword'].invalid && (requiredForm.controls['confirmpassword'].dirty || requiredForm.controls['confirmpassword'].touched)" class="alert alert-danger">
+      <div *ngIf="requiredForm.controls['confirmpassword'].errors?.['required']">
+        Must confirm password.
+      </div>
+    </div>
+
+
+  </form>
+
   <p>
     <button (click)="onSubmit()" mat-flat-button color ="warn" routerLink="/user">Submit</button>
   </p>
+  <p>Form value: {{ requiredForm.value | json }}</p>
+  <p>Form status: {{ requiredForm.status | json }}</p>
 </div>
