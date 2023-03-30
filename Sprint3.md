@@ -20,6 +20,16 @@ List frontend unit tests:
 
 List backend unit tests
 
+List backend unit tests:
+
+-Check if users and listings are added correctly
+
+-Check if users and listings can be retrieved from the data structures correctly
+
+-Check if users and listings can be removed
+
+-Check if users and listings can be instaniated
+
 
 Show updated documentation for your backend API 
 
