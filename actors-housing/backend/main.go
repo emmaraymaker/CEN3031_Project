@@ -15,14 +15,14 @@ func main() {
 
 	r := mux.NewRouter()
 
-	r.HandleFunc("/user/reg", registerUser).Methods("GET")
+	r.HandleFunc("/user/reg", registerUser).Methods("Post")
 	r.HandleFunc("/user/get", getUser).Methods("GET")
 	r.HandleFunc("/user/update", updateUser).Methods("POST")
-	r.HandleFunc("/user/search", searchUser).Methods("POST")
-	r.HandleFunc("/listing/set", setListing).Methods("PUT")
-	r.HandleFunc("/listing/get", getListing).Methods("DELETE")
-	r.HandleFunc("/listing/update", updateListing).Methods("DELETE")
-	r.HandleFunc("/listing/search", searchListing).Methods("DELETE")
+	r.HandleFunc("/user/search", searchUser).Methods("GET")
+	r.HandleFunc("/listing/set", setListing).Methods("POST")
+	r.HandleFunc("/listing/get", getListing).Methods("GET")
+	r.HandleFunc("/listing/update", updateListing).Methods("POST")
+	r.HandleFunc("/listing/search", searchListing).Methods("GET")
 
 	http.ListenAndServe(":8000", r)
 
