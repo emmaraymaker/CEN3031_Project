@@ -33,8 +33,16 @@
             <a routerLink="/home">Upper East Side</a>
         </tr>
       </table>
-    
+      <th>Available Listing's in New York</th>
+      <div *ngFor="let allListings of Listings">
+        {{ allListings.state }}  
+        {{ allListings.city }} 
+        {{ allListings.street }} 
+        {{ allListings.unit }} 
+        {{ allListings.zipcode }} 
+       ${{ allListings.price }}
+        <br>
+    </div>
       <br>
-    
     <br>
     </body>
