@@ -1,15 +1,20 @@
-<h2>Login</h2>
-<form (ngSubmit) = "onSubmit()">
-<div>
-  <p>
-    <input [(ngModel)]="email" formControlName="email" type="email" class="form-control" placeholder="Email" required>
-  </p>
-  <p>
-    <input [(ngModel)]="password" formControlName="password" type="password" class="form-control" placeholder="Password" required>
-  </p>
-  
-  <p>
-    <button click="onSubmit()" type="password" mat-flat-button color ="accent" routerLink="/user">Submit</button>
-  </p>
-</div>
-</form>
+<body>
+  <h2>Login</h2>
+  <form (ngSubmit) = "onSubmit()">
+    <div>
+      <p>
+        <label class="center-block">User Email:
+          <input [(ngModel)]="email" formControlName="email" type="email" class="form-control" placeholder="Email" required>
+        </label>
+      </p>
+      <p>
+        <label class="center-block">Password:
+          <input [(ngModel)]="password" formControlName="password" type="password" class="form-control" placeholder="Password" required>
+        </label>
+      </p>
+      <p>
+        <button click="onSubmit()" type="password" mat-flat-button color ="accent" routerLink="/user">Submit</button>
+      </p>
+    </div>
+  </form>
+</body>

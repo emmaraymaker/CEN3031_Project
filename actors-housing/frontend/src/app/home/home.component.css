@@ -1,4 +1,5 @@
 body, html {
+    margin-left: 1%;
     height: 100%;
     background-color: aliceblue;
 
@@ -9,10 +10,6 @@ body, html {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;  
-}
-table {
-    margin-left: 1%;
-    text-align:left;
 }
 th{
     font-size: large;
