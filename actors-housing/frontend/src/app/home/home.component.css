@@ -1,0 +1,19 @@
+body, html {
+    height: 100%;
+    background-color: aliceblue;
+
+  }
+  .skyline {
+    background-image: url(../../../../frontend/images/nycSkyLine.webp);
+    height: 35%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;  
+}
+table {
+    margin-left: 1%;
+    text-align:left;
+}
+th{
+    font-size: large;
+}
