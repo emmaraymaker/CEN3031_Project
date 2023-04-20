@@ -1,23 +1,21 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormBuilder } from '@angular/forms';
 import { RegistrationComponent } from './registration.component';
 
 describe('RegistrationComponent', () => {
   let component: RegistrationComponent;
-  let fixture: ComponentFixture<RegistrationComponent>;
+  let formBuilder: FormBuilder;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ RegistrationComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(RegistrationComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  beforeEach(() => {
+    formBuilder = new FormBuilder();
+    component = new RegistrationComponent(formBuilder);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create a form with required fields', () => {
+    expect(component.requiredForm.get('first_name')).toBeTruthy();
+    expect(component.requiredForm.get('last_name')).toBeTruthy();
+    expect(component.requiredForm.get('email')).toBeTruthy();
+    expect(component.requiredForm.get('unionid')).toBeTruthy();
+    expect(component.requiredForm.get('password')).toBeTruthy();
+    expect(component.requiredForm.get('confirmpassword')).toBeTruthy();
   });
 });
