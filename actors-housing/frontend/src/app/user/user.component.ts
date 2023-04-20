@@ -7,7 +7,8 @@ interface userProfile{
   firstName: string
   lastName: string
   email: string
-  uionID: string
+  unionID: string
+  password: string
 }
 
 @Component({
@@ -20,6 +21,7 @@ export class UserComponent implements OnInit{
   lastName = ''
   email = ''
   unionID = ''
+  password = ''
   User: userProfile [] = [] // array to hold user information
 
   constructor(private httpClient: HttpClient) {}
