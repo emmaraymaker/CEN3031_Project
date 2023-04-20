@@ -15,6 +15,7 @@ List frontend unit and Cypress tests:
   -Check if Registration page mounts
   
   Karma:
+  
     -Listings.component.spec.ts:
     - This test creates an instance of the ListingsComponent, sets some input values, calls the addListing() function, and checks if a new listing is added to the Listings array with the correct values. Note that this test does not require any Angular testing utilities since we are not testing the component's template or any Angular-specific functionality.
 
