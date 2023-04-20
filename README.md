@@ -17,3 +17,15 @@ The technologies that will be used to create the website include Golang by the b
 
 Team Members: Tanner Lane (back-end), Corbin Burditt (back-end), Emma Raymaker (front-end), Rosalinda Ramirez (front-end)
       
+Requirements for running Actors-Housing App: 
+
+1. Clone the rep: git clone https://github.com/emmaraymaker/CEN3031_Project.git
+2. Set up the Frontend (Angular)
+    - Install npm packages: npm install
+    - Navigate to directory for frontend
+    - $ npm run start
+3. Set up the Backend (Go)
+    - Install GO
+    - Navigate to directory for backend
+    - $ go run backend.go
+4. App should now be running and be used for users to register, login, looking at current listings, and add listings 
