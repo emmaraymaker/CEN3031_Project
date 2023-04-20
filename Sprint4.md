@@ -7,6 +7,21 @@ List frontend unit and Cypress tests
 
 List backend unit tests
 
+ListingSet tests:
+
+TestAddListing - Tests the backend's ability to add a listing
+
+TestSearchListing - Tests the backend's ability to search for a listing
+
+TestRemoveListing - Tests the backend's ability to remove a listing
+
+MemberList tests:
+
+TestAddMember - Tests the backend's ability to add a member
+
+TestSearchMember - Tests the backend's ability to search for a member
+
+TestRemoveMember - Tests the backend's ability to remove a member
 
 Show updated documentation for your backend API 
 
