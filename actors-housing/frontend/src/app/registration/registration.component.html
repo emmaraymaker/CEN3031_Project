@@ -3,7 +3,7 @@
     <form [formGroup]="requiredForm" novalidate>
       <div class="form-group">
         <label class="center-block">First name:
-          <input class="form-control" formControlName="first_name" placeholder="First Name">
+          <input [(ngModel)]="firstName" class="form-control" formControlName="first_name" placeholder="First Name">
         </label>
       </div>
   <div *ngIf="requiredForm.controls['first_name'].invalid && (requiredForm.controls['first_name'].dirty || requiredForm.controls['first_name'].touched)" class="alert alert-danger">
@@ -14,7 +14,7 @@
 
     <div class="form-group">
       <label class="center-block">Last name:
-        <input class="form-control" formControlName="last_name" placeholder="Last Name">
+        <input [(ngModel)]="lastName" class="form-control" formControlName="last_name" placeholder="Last Name">
       </label>
     </div>
     <div *ngIf="requiredForm.controls['last_name'].invalid && (requiredForm.controls['last_name'].dirty || requiredForm.controls['last_name'].touched)" class="alert alert-danger">
@@ -25,7 +25,7 @@
 
     <div class="form-group">
       <label class="center-block">User Email:
-          <input class="form-control" type="email" formControlName="email" placeholder="User Email">
+          <input [(ngModel)]="email" class="form-control" type="email" formControlName="email" placeholder="User Email">
       </label>
     </div>
     <div *ngIf="requiredForm.controls['email'].invalid && (requiredForm.controls['email'].dirty || requiredForm.controls['email'].touched)" class="alert alert-danger">
@@ -36,7 +36,7 @@
 
     <div class="form-group">
       <label class="center-block">Union ID:
-        <input class="form-control" type="number" formControlName="unionid" placeholder="Union ID">
+        <input [(ngModel)]="unionID" class="form-control" formControlName="unionid" placeholder="Union ID">
       </label>
     </div>
     <div *ngIf="requiredForm.controls['unionid'].invalid && (requiredForm.controls['unionid'].dirty || requiredForm.controls['unionid'].touched)" class="alert alert-danger">
@@ -47,7 +47,7 @@
 
     <div class="form-group">
       <label class="center-block">Password:
-        <input class="form-control" type="password" formControlName="password" placeholder="Password">
+        <input [(ngModel)]="password" class="form-control" type="password" formControlName="password" placeholder="Password">
       </label>
     </div>
     <div *ngIf="requiredForm.controls['password'].invalid && (requiredForm.controls['password'].dirty || requiredForm.controls['password'].touched)" class="alert alert-danger">
@@ -69,7 +69,7 @@
   </form>
 
   <p>
-    <button (click)="onSubmit()" mat-flat-button color ="accent" routerLink="/user">Submit</button>
+    <button (click)="onSubmit()" mat-flat-button color ="accent" routerLink="/login">Submit</button>
   </p>
   <!-- <p>Form value: {{ requiredForm.value | json }}</p>
   <p>Form status: {{ requiredForm.status | json }}</p> -->

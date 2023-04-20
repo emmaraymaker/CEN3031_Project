@@ -2,6 +2,16 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { firstValueFrom } from 'rxjs';
+
+interface userInformation{
+  firstName: string
+  lastName: string
+  email: string
+  password: string
+  unionID: string
+}
+
 
 @Component({
   selector: 'app-registration',
@@ -10,7 +20,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class RegistrationComponent implements OnInit{
   requiredForm: FormGroup;
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private httpClient: HttpClient) {
     this.createForm();
   }
   createForm() {
@@ -41,22 +51,31 @@ export class RegistrationComponent implements OnInit{
     });
   }
 
-  ngOnInit(): void {}
-  user: User = {
-    first_name: '',
-    last_name: '',
-    email: '',
-    id: 0,
-    password: ''
-  };
+  firstName: ''
+  lastName: ''
+  email: ''
+  unionID: ''
+  password: ''
+  User: userInformation [] = []
 
- onSubmit(): void{ // need to pass information to backend
-  first_name : this.user.first_name;
-  last_name : this.user.last_name;
-  email : this.user.email;
-  id : this.user.id;
-  password : this.user.password;
- }
+  async ngOnInit() {await this.thisUserInformation()}
+
+  async thisUserInformation() {
+    this.User = await firstValueFrom(this.httpClient
+    .get<userInformation[]>('/backend/user'))
+  }
+
+  // function to add user
+  async onSubmit(){ 
+    await firstValueFrom(this.httpClient.post('/backend/user', {
+      firstName : this.firstName,
+      lastName : this.lastName,
+      email : this.email,
+      uionID : this.unionID,
+      password : this.password,
+    }))
+      
+    await this.thisUserInformation()
+  }
 
 }
-

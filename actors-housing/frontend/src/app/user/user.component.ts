@@ -16,13 +16,6 @@ interface userProfile{
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit{
-  // user: User = {
-  //   first_name:'',
-  //   last_name: '',
-  //   email: '',
-  //   id: 0,
-  //   password: ''
-  // };
   firstName = ''
   lastName = ''
   email = ''
