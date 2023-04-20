@@ -1,23 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClient } from '@angular/common/http';
 import { UserComponent } from './user.component';
 
 describe('UserComponent', () => {
   let component: UserComponent;
-  let fixture: ComponentFixture<UserComponent>;
+  let httpClient: HttpClient;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ UserComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(UserComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  beforeEach(() => {
+    httpClient = new HttpClient(null);
+    component = new UserComponent(httpClient);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should have a user', () => {
+    expect(component.user).toBeDefined();
+  });
+
+  it('should have an empty user', () => {
+    expect(component.user.first_name).toEqual('');
+    expect(component.user.last_name).toEqual('');
+    expect(component.user.email).toEqual('');
+    expect(component.user.id).toEqual(0);
+    expect(component.user.password).toEqual('');
   });
 });
